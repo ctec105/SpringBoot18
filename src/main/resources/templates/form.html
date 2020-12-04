@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/base-layout :: head"></head>
+<body>
+
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<h2 class="mb-5 text-center">Introduce nombre y nivel de estudios</h2>
+					
+				<form action="#" th:action="@{/}" th:object="${estudiante}" method="post">
+					<label>Nombre</label>
+					<input type="text" th:field="*{nombre}" class="form-control col-md-10 mb-4"/>
+					
+					
+					
+					<!--  
+					
+					<div class="custom-control custom-radio">
+						<span th:each="estudio : ${estudios}">
+							<input type="radio" th:field="*{estudio}" th:value="${estudio.id}"/>
+							<label th:text="${estudio.descripcion}" th:field="*{estudio}" th:value="${estudio.id}"></label>
+						</span>
+					</div>
+					-->
+					
+					<select class="browser-default custom-select col-md-4" th:field="*{estudio}">
+						<option value="" th:text="'Selecciones estudios'"></option>
+						<option th:each="estudio : ${estudios}"
+							th:value="${estudio.id}" th:text="${estudio.descripcion}">
+						</option>
+					</select>
+					
+					
+					
+					
+					
+					<button type="submit" class="btn btn-success">Guardar</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

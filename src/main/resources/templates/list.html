@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layouts/base-layout :: head"></head>
+<body>
+
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			<div class="col-md-8">
+				<table class="table text-center">
+					<thead>
+						<tr>
+							<th>Nombre</th>
+							<th>Nombre</th>
+						</tr>
+					</thead>
+					
+					<tbody>
+						<tr th:each="estudiante :${estudiantes}">
+							<td th:text="${estudiante.nombre}"></td>
+							<td th:text="${estudiante.estudio.descripcion}"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
