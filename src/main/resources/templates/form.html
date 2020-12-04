@@ -12,14 +12,12 @@
 					<label>Nombre</label>
 					<input type="text" th:field="*{nombre}" class="form-control col-md-10 mb-4"/>
 					
-					
-					
 					<!--  
 					
 					<div class="custom-control custom-radio">
 						<span th:each="estudio : ${estudios}">
 							<input type="radio" th:field="*{estudio}" th:value="${estudio.id}"/>
-							<label th:text="${estudio.descripcion}" th:field="*{estudio}" th:value="${estudio.id}"></label>
+							<label th:text="${estudio.descripcion}"></label>
 						</span>
 					</div>
 					-->
@@ -30,9 +28,6 @@
 							th:value="${estudio.id}" th:text="${estudio.descripcion}">
 						</option>
 					</select>
-					
-					
-					
 					
 					
 					<button type="submit" class="btn btn-success">Guardar</button>
